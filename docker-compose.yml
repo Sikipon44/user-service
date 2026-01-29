@@ -13,9 +13,9 @@ services:
     volumes:
       - oracle-data:/opt/oracle/oradata
 
-  spring-app:
+  user-service:
     build: .
-    container_name: spring-app
+    container_name: user-service
     depends_on:
       - oracle
     environment:
