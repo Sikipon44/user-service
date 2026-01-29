@@ -20,7 +20,7 @@ spec:
             - containerPort: 8080
           env:
             - name: SPRING_DATASOURCE_URL
-              value: "jdbc:oracle:thin:@oracle:1521/XEPDB1"
+              value: "jdbc:oracle:thin:@oracle-db:1521/XEPDB1"
             - name: SPRING_DATASOURCE_USERNAME
               value: "shop"
             - name: SPRING_DATASOURCE_PASSWORD
