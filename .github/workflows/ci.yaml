@@ -23,7 +23,7 @@ jobs:
         run: mvn -B clean install -Dspring.profiles.active=test
 
       - name: Build Docker image
-        run: docker build -t user-service:latest .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/user-service:latest .
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
@@ -32,4 +32,4 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push image
-        run: docker push user-service:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/user-service:latest
