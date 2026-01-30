@@ -20,7 +20,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn -B clean install -Dspring.profiles.active=test
 
       - name: Build Docker image
         run: docker build -t user-service:latest .
